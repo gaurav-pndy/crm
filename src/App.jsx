@@ -10,18 +10,20 @@ function App() {
     {
       element: <AuthForm />,
       path: "/",
-    },
-    {
-      path: "/login",
-      element: <LoginPage />,
-    },
-    {
-      path: "/register",
-      element: <RegisterPage />,
-    },
-    {
-      path: "/forget",
-      element: <ForgetPasswordPage />,
+      children: [
+        {
+          path: "/login",
+          element: <LoginPage />,
+        },
+        {
+          path: "/register",
+          element: <RegisterPage />,
+        },
+        {
+          path: "/forget",
+          element: <ForgetPasswordPage />,
+        },
+      ],
     },
   ]);
 
