@@ -37,16 +37,30 @@ const AuthForm = () => {
     setShowHelpPopup(!showHelpPopup);
   };
 
-  useEffect(() => {
-    console.log("LoginPage component mounted");
-  }, []);
+  // useEffect(() => {
+  //   console.log("LoginPage component mounted");
+  // }, []);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 640); // initialize based on current width
 
+  useEffect(() => {
+    const checkScreenSize = () => {
+      setIsMobile(window.innerWidth <= 640);
+    };
+
+    // Attach event listener
+    window.addEventListener("resize", checkScreenSize);
+
+    // Cleanup on unmount
+    return () => {
+      window.removeEventListener("resize", checkScreenSize);
+    };
+  }, []);
   return (
     <div className="auth-page">
       {/* Help Popup */}
       {/* {showHelpPopup && <HelpPopup onClose={toggleHelpPopup} />} */}
 
-      <div className="auth-wrapper">
+      <div className={isMobile ? "" : "auth-wrapper"}>
         <div className={`container ${isActive ? "active" : ""}`}>
           {/* Login Form */}
           <div

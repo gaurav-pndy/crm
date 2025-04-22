@@ -11,9 +11,9 @@
 }
 
 .auth-page {
-    display: flex;
+    /* display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center; */
     min-height: 100vh;
     background: linear-gradient(90deg, #e2e2e2, #c9d6ff);
 }
@@ -73,16 +73,26 @@
   .form-box {
     transition: all 0.6s ease-in-out;
   }
+
+  @media screen and (min-width: 650px) {
+  .auth-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(90deg, #e2e2e2, #c9d6ff);
+} 
+  }
   
   /* Mobile responsive adjustments */
   @media screen and (max-width: 650px) {
-    .auth-page {
+    /* .auth-page {
         display: flex;
         justify-content: center;
         align-items: center;
         min-height: 100vh;
         background: linear-gradient(90deg, #e2e2e2, #c9d6ff);
-    }
+    } */
     .form-box.login,
     .form-box.register,
     .form-box.forget-password {
