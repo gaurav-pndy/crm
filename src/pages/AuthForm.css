@@ -8,6 +8,7 @@
     font-family: "Poppins", sans-serif;
     text-decoration: none;
     list-style: none;
+
 }
 
 .auth-page {
@@ -15,6 +16,7 @@
     justify-content: center;
     align-items: center; */
     min-height: 100vh;
+    
     background: linear-gradient(90deg, #e2e2e2, #c9d6ff);
 }
 
@@ -27,8 +29,10 @@
 
 .auth-wrapper .container {
     position: relative;
-    width: 1200px;
-    height: 600px;
+    width: 95vw;
+    max-width: 1200px;
+    min-height: 600px;
+    
     background: #fff;
     margin: 20px;
     border-radius: 30px;
@@ -74,7 +78,7 @@
     transition: all 0.6s ease-in-out;
   }
 
-  @media screen and (min-width: 650px) {
+  @media screen and (min-width: 850px) {
   .auth-page {
     display: flex;
     justify-content: center;
@@ -85,7 +89,7 @@
   }
   
   /* Mobile responsive adjustments */
-  @media screen and (max-width: 650px) {
+  @media screen and (max-width: 850px) {
     /* .auth-page {
         display: flex;
         justify-content: center;
@@ -703,13 +707,17 @@
 }
 
 
-@media screen and (max-width: 650px){
-    .container{ height: calc(100vh - 40px); }
+@media screen and (max-width: 850px){
+    .container{ height: calc(100vh - 40px); overflow-y: hidden; }
 
     .form-box{
         bottom: 0;
         width: 100%;
         height: 70%;
+    }
+    .help-button {
+      position: static; 
+      margin-bottom: 20px;
     }
 
     .container.active .form-box{
@@ -728,6 +736,7 @@
         .container.active .toggle-box::before{
             left: 0;
             top: 70%;
+            height: 100%;
         }
 
         .container.active .toggle-panel.toggle-left{
@@ -743,13 +752,14 @@
         .toggle-panel.toggle-right{
             right: 0;
             bottom: -30%;
+            visibility: hidden;
         }
 
-            .container.active .toggle-panel.toggle-right{ bottom: 0; }
+            .container.active .toggle-panel.toggle-right{ bottom: 0; visibility: visible; }
 }
 
 @media screen and (max-width: 400px){
-    .form-box { padding: 20px; }
+    /* .form-box { padding: 20px; } */
 
     .toggle-panel h1{font-size: 30px; }
 }

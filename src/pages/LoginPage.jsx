@@ -154,7 +154,14 @@ const LoginPage = () => {
   return (
     <div
       className="auth-container"
-      style={{ zIndex: 10, backgroundColor: "black" }}
+      style={{
+        zIndex: 10,
+        backgroundColor: "black",
+        margin: "auto",
+        padding: "16px",
+        borderRadius: "8px",
+        minWidth: "22rem",
+      }}
     >
       <ToastContainer style={{ color: "#fff" }} />
       <form
